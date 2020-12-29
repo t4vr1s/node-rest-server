@@ -8,11 +8,9 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 let urlDb;
 if (process.env.NODE_ENV === 'dev') {
   // urlDb = 'mongodb://localhost:27017/cafe';
-  urlDb =
-    'mongodb+srv://edu-react:5tQsL4C1ZJWl9UVA@cluster0.0ve3s.mongodb.net/cafe';
+  urlDb = process.env.MONGO_URI;
 } else {
-  urlDb =
-    'mongodb+srv://edu-react:5tQsL4C1ZJWl9UVA@cluster0.0ve3s.mongodb.net/cafe';
+  urlDb = process.env.MONGO_URI;
 }
 
 process.env.URL_DB = urlDb;
