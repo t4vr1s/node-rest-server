@@ -5,7 +5,7 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 // vencimiento del token
-process.env.CADUCIDAD_TOKEN = '24h';
+process.env.CADUCIDAD_TOKEN = '48h';
 
 // semilla de autenticación
 process.env.SEED = process.env.SEED || 'secret-este-es-el-seed-de-desarrollo';
