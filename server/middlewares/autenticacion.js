@@ -37,7 +37,26 @@ const verificaAdminRole = (req, res, next) => {
   }
 };
 
+// verifica token para imgenes
+const verificaTokenImg = (req, res, next) => {
+  const { token } = req.query;
+  jwt.verify(token, process.env.SEED, (err, decode) => {
+    if (err) {
+      return res.status(401).json({
+        ok: false,
+        err: {
+          message: 'token no válido',
+        },
+      });
+    }
+
+    req.usuario = decode.usuario;
+    next();
+  });
+};
+
 module.exports = {
   verificaToken,
   verificaAdminRole,
+  verificaTokenImg,
 };
